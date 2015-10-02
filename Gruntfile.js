@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function(grunt) {
 
   var srcFiles = ['lab2.js'];
@@ -20,7 +18,8 @@ module.exports = function(grunt) {
     jscs: {
       src: srcFiles,
       options: {
-        preset: 'airbnb',
+        preset: "airbnb",
+        disallowYodaConditions: null,
         requireMultipleVarDecl: null,
         validateQuoteMarks: true,
         disallowMultipleVarDecl: true
@@ -28,9 +27,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-jscs');
+  grunt.loadNpmTasks("grunt-contrib-jshint");
+  grunt.loadNpmTasks("grunt-jscs");
 
-  grunt.registerTask('default', ['jshint', 'jscs']);
+  grunt.registerTask("default", [ "jshint", "jscs"]);
 
 };
