@@ -43,7 +43,7 @@ function assert(expression, failureMessage) {
     fourth hour     |    4/hour        |        4         |
 
  TODO: First, make a constructor function, called Blob, that makes blobs. */
-var Blob = function (name, color){
+var Blob = function(name, color) {
   this.name = name;
   this.color = color;
 };
@@ -65,9 +65,7 @@ while (downingtonPeople > 0) {
 }
 var hoursSpentInDowington = hour;
 
-
-
- // TODO: assign me the value of the
+// TODO: assign me the value of the
                            // above calculation (how long it took
                            // the blob to eat Dowington)
 
@@ -75,13 +73,12 @@ var hoursSpentInDowington = hour;
 // town, and the starting consumption rate, and returns the number
 // of hours the blob needs to ooze its way through that town.
 
-
 Blob.prototype.hoursToOoze = function(population, peoplePerHour) {
-for (var i = 0; population > 0; i++) {
-   population = population - peoplePerHour;
+  for (var i = 0; population > 0; i++) {
+    population = population - peoplePerHour;
     peoplePerHour++;
-    }
-return i;
+  }
+  return i;
 };
 
   // TODO: implement me based on the instructions above.
@@ -92,8 +89,8 @@ assert(blob.hoursToOoze(1000, 1) === hoursSpentInDowington,
   'hoursSpentInDowington should match hoursToOoze\'s result for 1000');
 // TODO: write three more assertions like the two above, testing out
 // the hoursToOoze method.
-assert(blob.hoursToOoze(300,10) === 17);
-assert(blob.hoursToOoze(10,1) === 4);
+assert(blob.hoursToOoze(300, 10) === 17);
+assert(blob.hoursToOoze(10, 1) === 4);
 assert(blob.hoursToOoze(60000, 100) === 261);
 
 //*********************************************************
@@ -111,7 +108,7 @@ var hello = {
 // speak, and method (that you'll place on the prototype) called
 // sayHello.
 
-function SentientBeing (planet, language) {
+function SentientBeing(planet, language) {
   // TODO: specify a home planet and a language
   // you'll need to add parameters to this constructor
   this.planet = planet;
@@ -128,22 +125,20 @@ function SentientBeing (planet, language) {
 
     //TODO: put this on the SentientBeing prototype
 
-SentientBeing.prototype.sayHello = function (sb) {
+SentientBeing.prototype.sayHello = function(sb) {
   console.log(hello[this.language]);
   return hello[sb.language];
-  };
-
+};
 
 // TODO: create three subclasses of SentientBeing, one for each
 // species above (Klingon, Human, Romulan).
-function Klingon (){}
-function Romulan (){}
-function Human (){}
+function Klingon() {}
+function Romulan() {}
+function Human() {}
 
 Klingon.prototype = new SentientBeing('Qo\'noS', 'klingon');
 Romulan.prototype = new SentientBeing('Romulus', 'romulan');
 Human.prototype = new SentientBeing('Earth', 'federation standard');
-
 
 assert((new Human()).sayHello(new Klingon()) === 'nuqneH',
   'the klingon should hear nuqneH');
@@ -171,9 +166,9 @@ function lastLetterSort(stringArray) {
     // this byLastLetter function is a "compare function"
     // And check out the "comparing strings" section  here:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-    if ( word[word.length - 1] < otherWord[otherWord.length - 1] )
+    if (word[word.length - 1] < otherWord[otherWord.length - 1])
       return -1;
-    else if ( word[word.length - 1] > otherWord[otherWord.length - 1] )
+    else if (word[word.length - 1] > otherWord[otherWord.length - 1])
       return 1;
     return 0;
   }
@@ -206,9 +201,9 @@ function sumSort(arrayOfArrays) {
     //  inside each array
     var itemSum = sumArray(item);
     var secondSum = sumArray(secondItem);
-    if ( itemSum < secondSum )
+    if (itemSum < secondSum)
       return -1;
-    else if ( itemSum > secondSum )
+    else if (itemSum > secondSum)
       return 1;
     return 0;
   });
